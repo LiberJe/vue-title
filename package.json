@@ -4,8 +4,8 @@
   "description": "A title bar vue component",
   "main": "dist/index.js",
   "scripts": {
-    "dev": "webpack-dev-server --config ./webpack.config.dev.js --hot --inline",
-    "build": "rimraf ./dist && webpack --config ./webpack.config.js"
+    "dev": "webpack-dev-server --config ./build/webpack.conf.dev.js --hot --inline",
+    "build": "rimraf ./dist && webpack --config ./build/webpack.conf.prod.js"
   },
   "repository": {
     "type": "git",

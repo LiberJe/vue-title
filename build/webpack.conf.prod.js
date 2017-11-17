@@ -1,33 +1,18 @@
 const path = require('path')
 const webpack = require('webpack')
+const merge = require('webpack-merge')
+const baseWebpackConfig = require('./webpack.conf.base')
 
-module.exports = {
+module.exports = merge(baseWebpackConfig, {
   entry: {
     index: './src/index.js'
   },
   output: {
-    path: path.resolve(__dirname, './dist/'),
+    path: path.resolve(__dirname, '../dist/'),
+    publicPath: 'dist/',
     filename: '[name].js',
     library: 'vue-title',
     libraryTarget: 'umd'
-  },
-  module: {
-    loaders: [
-      {
-        test: /\.js$/,
-        loader: 'babel',
-        include: __dirname,
-        exclude: /node_modules/
-      },
-      {
-        test: /\.css$/,
-        loader: 'style!css'
-      },
-      {
-        test: /\.vue$/,
-        loader: 'vue'
-      }
-    ]
   },
   plugins: [
     new webpack.optimize.UglifyJsPlugin({
@@ -39,4 +24,4 @@ module.exports = {
       }
     })
   ]
-}
+})
