@@ -1,7 +1,7 @@
 import Vue from 'vue'
-import Titlebar from '../src/index'
+import App from './app'
 
 new Vue({
   el: '#app',
-  render: h=>h(Titlebar)
+  render: h=>h(App)
 })
